@@ -12,7 +12,3 @@ PomodoroWidget::~PomodoroWidget()
 {
   delete ui;
 }
-
-void PomodoroWidget::on_pushButton_clicked()
-{
-}
