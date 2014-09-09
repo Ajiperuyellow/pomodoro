@@ -9,17 +9,17 @@ class PomodoroWidget;
 
 class PomodoroWidget : public QMainWindow
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    explicit PomodoroWidget(QWidget *parent = 0);
-    ~PomodoroWidget();
+  explicit PomodoroWidget(QWidget *parent = 0);
+  ~PomodoroWidget();
 
 private slots:
-    void on_pushButton_clicked();
+  void on_pushButton_clicked();
 
 private:
-    Ui::PomodoroWidget *ui;
+  Ui::PomodoroWidget *ui;
 };
 
 #endif // POMODOROWIDGET_H
