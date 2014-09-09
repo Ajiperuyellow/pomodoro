@@ -5,6 +5,7 @@ class Framework
 {
 public:
     Framework();
+    void startTimer();
 };
 
 #endif // FRAMEWORK_H

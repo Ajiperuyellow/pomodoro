@@ -13,8 +13,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        pomodorowidget.cpp
+        pomodorowidget.cpp \
+    framework.cpp
 
-HEADERS  += pomodorowidget.h
+HEADERS  += pomodorowidget.h \
+    framework.h
 
 FORMS    += pomodorowidget.ui
