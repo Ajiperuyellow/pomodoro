@@ -15,6 +15,9 @@ public:
     explicit PomodoroWidget(QWidget *parent = 0);
     ~PomodoroWidget();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::PomodoroWidget *ui;
 };
