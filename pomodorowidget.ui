@@ -14,15 +14,30 @@
    <string>PomodoroWidget</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>0</y>
-      <width>391</width>
-      <height>251</height>
+      <width>381</width>
+      <height>151</height>
      </rect>
     </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QTextEdit" name="textEdit"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="killSwitch">
+       <property name="focusPolicy">
+        <enum>Qt::StrongFocus</enum>
+       </property>
+       <property name="text">
+        <string>Do Not Press!</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
    <widget class="QCheckBox" name="checkBox">
     <property name="geometry">

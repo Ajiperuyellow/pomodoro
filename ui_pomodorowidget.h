@@ -16,9 +16,11 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,7 +29,10 @@ class Ui_PomodoroWidget
 {
 public:
     QWidget *centralWidget;
+    QWidget *layoutWidget;
+    QVBoxLayout *verticalLayout;
     QTextEdit *textEdit;
+    QPushButton *killSwitch;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -39,9 +44,25 @@ public:
         PomodoroWidget->resize(400, 300);
         centralWidget = new QWidget(PomodoroWidget);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        textEdit = new QTextEdit(centralWidget);
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 0, 381, 151));
+        verticalLayout = new QVBoxLayout(layoutWidget);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        textEdit = new QTextEdit(layoutWidget);
         textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(0, 0, 391, 251));
+
+        verticalLayout->addWidget(textEdit);
+
+        killSwitch = new QPushButton(layoutWidget);
+        killSwitch->setObjectName(QStringLiteral("killSwitch"));
+        killSwitch->setFocusPolicy(Qt::StrongFocus);
+
+        verticalLayout->addWidget(killSwitch);
+
         PomodoroWidget->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(PomodoroWidget);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -62,6 +83,7 @@ public:
     void retranslateUi(QMainWindow *PomodoroWidget)
     {
         PomodoroWidget->setWindowTitle(QApplication::translate("PomodoroWidget", "PomodoroWidget", 0));
+        killSwitch->setText(QApplication::translate("PomodoroWidget", "Do Not Press!", 0));
     } // retranslateUi
 
 };

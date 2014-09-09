@@ -2,6 +2,7 @@
 #define POMODOROWIDGET_H
 
 #include <QMainWindow>
+#include "framework.h"
 
 namespace Ui {
 class PomodoroWidget;
@@ -15,8 +16,12 @@ public:
   explicit PomodoroWidget(QWidget *parent = 0);
   ~PomodoroWidget();
 
+private slots:
+  void on_killSwitch_clicked();
+
 private:
   Ui::PomodoroWidget *ui;
+  Framework f;
 };
 
 #endif // POMODOROWIDGET_H
