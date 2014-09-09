@@ -1,0 +1,4 @@
+Makefile
+Pomodoro
+*.o
+moc_*
