@@ -9,14 +9,14 @@ class PomodoroWidget;
 
 class PomodoroWidget : public QMainWindow
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    explicit PomodoroWidget(QWidget *parent = 0);
-    ~PomodoroWidget();
+  explicit PomodoroWidget(QWidget *parent = 0);
+  ~PomodoroWidget();
 
 private:
-    Ui::PomodoroWidget *ui;
+  Ui::PomodoroWidget *ui;
 };
 
 #endif // POMODOROWIDGET_H

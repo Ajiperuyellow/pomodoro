@@ -5,10 +5,10 @@ PomodoroWidget::PomodoroWidget(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::PomodoroWidget)
 {
-    ui->setupUi(this);
+  ui->setupUi(this);
 }
 
 PomodoroWidget::~PomodoroWidget()
 {
-    delete ui;
+  delete ui;
 }
