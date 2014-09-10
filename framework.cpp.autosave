@@ -24,6 +24,9 @@ ComplexNumberTest::ComplexNumberTest()
 
 void FrameworkTracking::StartTimer(){
 throw std::runtime_error("startTimer - Function call");
+    
+    
+    
 }
 
 void FrameworkTracking::Interrupt(){

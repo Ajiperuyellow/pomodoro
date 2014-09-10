@@ -6,7 +6,7 @@
 PomodoroWidget::PomodoroWidget(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::PomodoroWidget),
-    f()
+    FrameworkPlanningInstance(),FrameworkTrackingInstance()
 {
   ui->setupUi(this);
 }
@@ -18,9 +18,29 @@ PomodoroWidget::~PomodoroWidget()
 
 void PomodoroWidget::on_killSwitch_clicked()
 {
-  try{
-    f.startTimer();
-  }catch(std::exception &e){
+    try{
+        FrameworkPlanningInstance.EnterListItem();
+        }catch(std::exception &e)
+        {
         QMessageBox::critical(this,"Doom & Gloom",e.what());
-  }
+        }
+    try{
+        FrameworkPlanningInstance.SetNumberOfPomodori();
+        }catch(std::exception &e)
+        {
+        QMessageBox::critical(this,"Doom & Gloom",e.what());
+        }
+    try{
+        FrameworkTrackingInstance.Interrupt();
+        }catch(std::exception &e)
+        {
+        QMessageBox::critical(this,"Doom & Gloom",e.what());
+        }
+    try{
+        FrameworkTrackingInstance.StartTimer();
+        }catch(std::exception &e)
+        {
+        QMessageBox::critical(this,"Doom & Gloom",e.what());
+        }
+
 }

@@ -21,7 +21,9 @@ private slots:
 
 private:
   Ui::PomodoroWidget *ui;
-  Framework f;
+  Framework FrameworkInstance;
+  FrameworkPlanning FrameworkPlanningInstance;
+  FrameworkTracking FrameworkTrackingInstance;
 };
 
 #endif // POMODOROWIDGET_H

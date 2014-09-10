@@ -10,7 +10,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Pomodoro
 TEMPLATE = app
-
+CONFIG        = qt warn_on debug
+unix:LIBS   = -L../qcppunit -lqcppunit
+INCLUDEPATH = ../qcppunit ../qcppunit/testlib
 
 SOURCES += main.cpp\
         pomodorowidget.cpp \
@@ -20,3 +22,5 @@ HEADERS  += pomodorowidget.h \
     framework.h
 
 FORMS    += pomodorowidget.ui
+
+

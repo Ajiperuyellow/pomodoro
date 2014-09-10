@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'pomodorowidget.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.1
+** Created by: Qt User Interface Compiler version 5.2.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -33,6 +34,7 @@ public:
     QVBoxLayout *verticalLayout;
     QTextEdit *textEdit;
     QPushButton *killSwitch;
+    QCheckBox *checkBox;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -41,7 +43,7 @@ public:
     {
         if (PomodoroWidget->objectName().isEmpty())
             PomodoroWidget->setObjectName(QStringLiteral("PomodoroWidget"));
-        PomodoroWidget->resize(400, 300);
+        PomodoroWidget->resize(467, 368);
         centralWidget = new QWidget(PomodoroWidget);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         layoutWidget = new QWidget(centralWidget);
@@ -63,10 +65,13 @@ public:
 
         verticalLayout->addWidget(killSwitch);
 
+        checkBox = new QCheckBox(centralWidget);
+        checkBox->setObjectName(QStringLiteral("checkBox"));
+        checkBox->setGeometry(QRect(150, 260, 97, 22));
         PomodoroWidget->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(PomodoroWidget);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 18));
+        menuBar->setGeometry(QRect(0, 0, 467, 25));
         PomodoroWidget->setMenuBar(menuBar);
         mainToolBar = new QToolBar(PomodoroWidget);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -84,6 +89,7 @@ public:
     {
         PomodoroWidget->setWindowTitle(QApplication::translate("PomodoroWidget", "PomodoroWidget", 0));
         killSwitch->setText(QApplication::translate("PomodoroWidget", "Do Not Press!", 0));
+        checkBox->setText(QApplication::translate("PomodoroWidget", "CheckBox", 0));
     } // retranslateUi
 
 };
