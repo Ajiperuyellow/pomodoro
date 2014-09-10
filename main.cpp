@@ -1,15 +1,18 @@
 #include "pomodorowidget.h"
 #include <QApplication>
 #include "framework.h"
+#include<iostream>
+#include<stdexcept>
 
-#include <cppunit/CompilerOutputter.h>
-#include <cppunit/extensions/TestFactoryRegistry.h>
-#include <cppunit/ui/text/TestRunner.h>
-#include <qapplication.h>
-
+using std::cout;
+using std::endl;
 
 int main(int argc, char *argv[])
 {
+    FrameworkTracking FrameworkTrackingInstance;
+
+    //FrameworkTrackingInstance.StartTimer();
+    cout << "Program starts" << endl;
 
     QApplication a(argc, argv);
     PomodoroWidget w;

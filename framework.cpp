@@ -3,6 +3,8 @@
 #include<stdexcept>
 #include <cppunit/extensions/HelperMacros.h>
 
+
+
 using std::cout;
 using std::endl;
 
@@ -16,14 +18,10 @@ FrameworkPlanning::FrameworkPlanning()
 FrameworkTracking::FrameworkTracking()
 {}
 
-Complex::Complex()
-{}
 
-ComplexNumberTest::ComplexNumberTest()
-{}
-
-void FrameworkTracking::StartTimer(){
-throw std::runtime_error("startTimer - Function call");
+int FrameworkTracking::StartTimer(){
+//throw std::runtime_error("startTimer - Function call");
+    return 7;
 }
 
 void FrameworkTracking::Interrupt(){
