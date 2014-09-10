@@ -1,29 +1,25 @@
 #ifndef POMODOROWIDGET_H
 #define POMODOROWIDGET_H
 
-#include <QMainWindow>
-#include "framework.h"
+#include <QWidget>
+
+class PomodoroApplication;
 
 namespace Ui {
 class PomodoroWidget;
 }
 
-class PomodoroWidget : public QMainWindow
+class PomodoroWidget : public QWidget
 {
   Q_OBJECT
 
 public:
-  explicit PomodoroWidget(QWidget *parent = 0);
+  explicit PomodoroWidget(PomodoroApplication &parent);
   ~PomodoroWidget();
-
-private slots:
-  void on_killSwitch_clicked();
 
 private:
   Ui::PomodoroWidget *ui;
-  Framework FrameworkInstance;
-  FrameworkPlanning FrameworkPlanningInstance;
-  FrameworkTracking FrameworkTrackingInstance;
+  PomodoroApplication & parent_app;
 };
 
 #endif // POMODOROWIDGET_H

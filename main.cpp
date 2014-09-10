@@ -1,24 +1,12 @@
-#include "pomodorowidget.h"
 #include <QApplication>
-#include "framework.h"
-#include<iostream>
-#include<stdexcept>
-
-using std::cout;
-using std::endl;
+#include"pomodoroapplication.h"
 
 int main(int argc, char *argv[])
 {
-    //FrameworkTracking FrameworkTrackingInstance;
-    //FrameworkTrackingInstance.StartTimer();
+  QApplication a(argc,argv);
+  PomodoroApplication app;
 
-    cout << "Program starts" << endl;
-
-    QApplication a(argc, argv);
-    PomodoroWidget w;
-    w.show();
+  app.Start();
 
   return a.exec();
 }
-
-
