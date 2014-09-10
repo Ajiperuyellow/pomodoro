@@ -5,7 +5,32 @@ class Framework
 {
 public:
     Framework();
-    void startTimer();
+
 };
+
+class FrameworkTracking
+{
+public:
+    FrameworkTracking();
+
+    int StartTimer();
+    int TimerHasRunOut();
+    int Interrupt();
+};
+
+class FrameworkPlanning
+{
+public:
+    FrameworkPlanning();
+
+    int NewNameOfProject();
+    int OpenExistingProject();
+    int EnterListItem();
+    int SetNumberOfPomodori();
+    int SetTodaysObjects();
+};
+
+
+
 
 #endif // FRAMEWORK_H

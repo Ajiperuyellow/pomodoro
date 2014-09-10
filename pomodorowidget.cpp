@@ -1,26 +1,19 @@
 #include "pomodorowidget.h"
 #include "ui_pomodorowidget.h"
 
-#include<QMessageBox>
+#include "pomodoroapplication.h"
 
-PomodoroWidget::PomodoroWidget(QWidget *parent) :
-    QMainWindow(parent),
+PomodoroWidget::PomodoroWidget(PomodoroApplication & parent)
+  : QWidget(0),
     ui(new Ui::PomodoroWidget),
-    f()
+    parent_app(parent)
 {
   ui->setupUi(this);
+  connect(ui->planning_button,SIGNAL(clicked()),&parent_app,SLOT(SwitchToPlanningWindow()));
+  //connect(ui->planning_button,SIGNAL(clicked()),this,SLOT(close()));
 }
 
 PomodoroWidget::~PomodoroWidget()
 {
   delete ui;
-}
-
-void PomodoroWidget::on_killSwitch_clicked()
-{
-  try{
-    f.startTimer();
-  }catch(std::exception &e){
-        QMessageBox::critical(this,"Doom & Gloom",e.what());
-  }
 }

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'pomodorowidget.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.1
+** Created by: Qt User Interface Compiler version 5.2.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -13,13 +13,9 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTextEdit>
-#include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -28,62 +24,44 @@ QT_BEGIN_NAMESPACE
 class Ui_PomodoroWidget
 {
 public:
-    QWidget *centralWidget;
-    QWidget *layoutWidget;
+    QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
-    QTextEdit *textEdit;
-    QPushButton *killSwitch;
-    QMenuBar *menuBar;
-    QToolBar *mainToolBar;
-    QStatusBar *statusBar;
 
-    void setupUi(QMainWindow *PomodoroWidget)
+    QPushButton *planning_button;
+    QPushButton *tracking_button;
+
+    void setupUi(QWidget *PomodoroWidget)
     {
         if (PomodoroWidget->objectName().isEmpty())
             PomodoroWidget->setObjectName(QStringLiteral("PomodoroWidget"));
-        PomodoroWidget->resize(400, 300);
-        centralWidget = new QWidget(PomodoroWidget);
-        centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        layoutWidget = new QWidget(centralWidget);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 0, 381, 151));
-        verticalLayout = new QVBoxLayout(layoutWidget);
-        verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        PomodoroWidget->resize(200, 200);
+        verticalLayout_2 = new QVBoxLayout(PomodoroWidget);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        textEdit = new QTextEdit(layoutWidget);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
+        planning_button = new QPushButton(PomodoroWidget);
+        planning_button->setObjectName(QStringLiteral("planning_button"));
 
-        verticalLayout->addWidget(textEdit);
+        verticalLayout->addWidget(planning_button);
 
-        killSwitch = new QPushButton(layoutWidget);
-        killSwitch->setObjectName(QStringLiteral("killSwitch"));
-        killSwitch->setFocusPolicy(Qt::StrongFocus);
+        tracking_button = new QPushButton(PomodoroWidget);
+        tracking_button->setObjectName(QStringLiteral("tracking_button"));
 
-        verticalLayout->addWidget(killSwitch);
+        verticalLayout->addWidget(tracking_button);
 
-        PomodoroWidget->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(PomodoroWidget);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 18));
-        PomodoroWidget->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(PomodoroWidget);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        PomodoroWidget->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(PomodoroWidget);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
-        PomodoroWidget->setStatusBar(statusBar);
+
+        verticalLayout_2->addLayout(verticalLayout);
 
         retranslateUi(PomodoroWidget);
 
         QMetaObject::connectSlotsByName(PomodoroWidget);
     } // setupUi
 
-    void retranslateUi(QMainWindow *PomodoroWidget)
+    void retranslateUi(QWidget *PomodoroWidget)
     {
-        PomodoroWidget->setWindowTitle(QApplication::translate("PomodoroWidget", "PomodoroWidget", 0));
-        killSwitch->setText(QApplication::translate("PomodoroWidget", "Do Not Press!", 0));
+        PomodoroWidget->setWindowTitle(QApplication::translate("PomodoroWidget", "Form", 0));
+        planning_button->setText(QApplication::translate("PomodoroWidget", "Planning", 0));
+        tracking_button->setText(QApplication::translate("PomodoroWidget", "Tracking", 0));
     } // retranslateUi
 
 };
