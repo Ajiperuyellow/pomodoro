@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <sqlite3.h>
-#include "database-h"
+#include "database.h"
 
 using namespace std;
 
@@ -27,7 +27,7 @@ bool Database::closeDatabase()
 {
    int rc;
  
-   rc = sqlite3_close(databse);
+   rc = sqlite3_close(database);
 
    if ( rc != SQLITE_OK ) {
       cout << "Cannot close Databse" << endl;
