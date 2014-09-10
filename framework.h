@@ -14,7 +14,8 @@ public:
     FrameworkTracking();
 
     int StartTimer();
-    void Interrupt();
+    int TimerHasRunOut();
+    int Interrupt();
 };
 
 class FrameworkPlanning
@@ -22,8 +23,11 @@ class FrameworkPlanning
 public:
     FrameworkPlanning();
 
-    void EnterListItem();
-    void SetNumberOfPomodori();
+    int NewNameOfProject();
+    int OpenExistingProject();
+    int EnterListItem();
+    int SetNumberOfPomodori();
+    int SetTodaysObjects();
 };
 
 

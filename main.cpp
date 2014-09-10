@@ -9,9 +9,9 @@ using std::endl;
 
 int main(int argc, char *argv[])
 {
-    FrameworkTracking FrameworkTrackingInstance;
-
+    //FrameworkTracking FrameworkTrackingInstance;
     //FrameworkTrackingInstance.StartTimer();
+
     cout << "Program starts" << endl;
 
     QApplication a(argc, argv);

@@ -1,5 +1,6 @@
 Makefile
 Pomodoro
 *.user
+*.autosave
 *.o
 moc_*

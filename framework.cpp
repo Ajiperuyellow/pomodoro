@@ -8,7 +8,7 @@
 using std::cout;
 using std::endl;
 
-
+//CONSTRUCTORS
 Framework::Framework()
 {}
 
@@ -18,29 +18,47 @@ FrameworkPlanning::FrameworkPlanning()
 FrameworkTracking::FrameworkTracking()
 {}
 
+//FUNCTIONS
 
+//FrameworkTracking Functions
 int FrameworkTracking::StartTimer(){
 //throw std::runtime_error("startTimer - Function call");
+return 7;
+}
+
+int FrameworkTracking::TimerHasRunOut(){
+//throw std::runtime_error("TimerHasRunOut - Function call");
+//call new window
+return 7;
+}
+
+int FrameworkTracking::Interrupt(){
+//throw std::runtime_error("Interrupt-Function call");
+return 7;
+}
+
+//FrameworkPlanning Functions
+int FrameworkPlanning::EnterListItem(){
+//throw std::runtime_error("EnterListItem-Function call");
     return 7;
 }
 
-void FrameworkTracking::Interrupt(){
-throw std::runtime_error("Interrupt-Function call");
+int FrameworkPlanning::SetNumberOfPomodori(){
+//throw std::runtime_error("SetNumberOfPomodori-Function call");
+    return 7;
 }
 
-void FrameworkPlanning::EnterListItem(){
-throw std::runtime_error("EnterListItem-Function call");
+int FrameworkPlanning::NewNameOfProject(){
+//throw std::runtime_error("NewNameOfProject-Function call");r
+    return 7;
 }
 
-void FrameworkPlanning::SetNumberOfPomodori(){
-throw std::runtime_error("SetNumberOfPomodori-Function call");
+int FrameworkPlanning::OpenExistingProject(){
+//throw std::runtime_error("OpenExistingProject-Function call");
+    return 7;
 }
 
-/**BOOST_AUTO_TEST_CASE( my_test )
-{
-    FrameworkPlanning test_object( "qwerty" );
-
-    BOOST_CHECK( test_object.is_valid() );
-}*/
-
-
+int FrameworkPlanning::SetTodaysObjects(){
+//throw std::runtime_error("SetTodaysObjects-Function call");
+    return 7;
+}
