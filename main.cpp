@@ -1,12 +1,12 @@
-#include "pomodorowidget.h"
 #include <QApplication>
-#include "framework.h"
+#include"pomodoroapplication.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    PomodoroWidget w;
-    w.show();
+  QApplication a(argc,argv);
+  PomodoroApplication app;
+
+  app.Start();
 
   return a.exec();
 }

@@ -13,10 +13,23 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        pomodorowidget.cpp \
-    framework.cpp
+    framework.cpp \
+    pomodoroapplication.cpp \
+    pomodorowidget.cpp \
+    planningwidget.cpp \
+    trackingwidget.cpp
 
-HEADERS  += pomodorowidget.h \
-    framework.h
+HEADERS  += \
+    framework.h \
+    pomodoroapplication.h \
+    pomodorowidget.h \
+    planningwidget.h \
+    trackingwidget.h
 
-FORMS    += pomodorowidget.ui
+FORMS    += \
+    pomodorowidget.ui \
+    planningwidget.ui \
+    trackingwidget.ui
+
+QMAKE_CXXFLAGS += \
+    -std=c++11
