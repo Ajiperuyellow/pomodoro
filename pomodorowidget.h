@@ -21,7 +21,7 @@ public:
 private:
   Ui::PomodoroWidget *ui;
   PomodoroApplication & parent_app;
-  QPixmap tomato_icon;
+  QPixmap pomodoro_pic;
 };
 
 #endif // POMODOROWIDGET_H

@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>tomato.png</file>
         <file>aubergine.png</file>
+        <file>pomo.png</file>
     </qresource>
 </RCC>

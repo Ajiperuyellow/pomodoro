@@ -7,11 +7,11 @@ PomodoroWidget::PomodoroWidget(PomodoroApplication & parent)
   : QWidget(0),
     ui(new Ui::PomodoroWidget),
     parent_app(parent),
-    tomato_icon(":/tomato.png")
+    pomodoro_pic(":/pomo.png")
 {
   ui->setupUi(this);
 
-  ui->image_label->setPixmap(tomato_icon);
+  ui->image_label->setPixmap(pomodoro_pic.scaled(QSize(100,100),Qt::KeepAspectRatio));
 
   connect(ui->planning_button,SIGNAL(clicked()),&parent_app,SLOT(SwitchToPlanningWindow()));
   connect(ui->tracking_button,SIGNAL(clicked()),&parent_app,SLOT(SwitchToTrackingWindow()));
