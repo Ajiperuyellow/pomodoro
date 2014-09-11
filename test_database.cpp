@@ -11,5 +11,6 @@ Database db;
 BOOST_AUTO_TEST_CASE(myCaseName)
 {
     BOOST_CHECK(db.openDatabase() == true);
+    BOOST_CHECK(db.closeDatabase() == true);
 }
 
