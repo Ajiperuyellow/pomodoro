@@ -16,24 +16,30 @@ FrameworkPlanning::FrameworkPlanning()
 FrameworkTracking::FrameworkTracking()
 {}
 
+
+
 //FUNCTIONS
 
 //FrameworkTracking Functions
 int FrameworkTracking::StartTimer(){
 
-    Timer aTimerInstance;
-    aTimerInstance.Go();
-
-//throw std::runtime_error("startTimer - Function call");
-
+Timer aTimerInstance(*this);
+aTimerInstance.Go(20);
+cout << "Start Timer" << endl;
 return 7;
+
 }
 
 int FrameworkTracking::TimerHasRunOut(){
+
+cout << "Timer Has Run Out" << endl;
+
 //throw std::runtime_error("TimerHasRunOut - Function call");
-//call new window
+
 return 7;
 }
+
+
 
 int FrameworkTracking::Interrupt(){
 //throw std::runtime_error("Interrupt-Function call");
