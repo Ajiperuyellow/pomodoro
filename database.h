@@ -4,6 +4,11 @@
 #include <string>
 #include <sqlite3.h>
 
+/*  ****  Activity List Table ****
+ *  index : avtivity : estimated pomodoros : day : priority : finished flag : used pomodoros : ext intr count : int intr count : UnplannedUrgent
+ *
+ **********************************/
+
 class Database {
   sqlite3 *database;
   std::string db_name;
