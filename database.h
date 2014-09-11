@@ -4,8 +4,6 @@
 #include <string>
 #include <sqlite3.h>
 
-class sqlite3;
-
 class Database {
   sqlite3 *database;
   std::string db_name;
