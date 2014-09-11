@@ -2,6 +2,7 @@
 #define DATABASE_H
 
 #include <string>
+#include <sqlite3.h>
 
 class sqlite3;
 
