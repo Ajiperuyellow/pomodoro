@@ -20,9 +20,6 @@ int main(int argc, char *argv[])
   QApplication a(argc,argv);
   PomodoroApplication app;
 
-  FrameworkTracking TheFrameworkTrackingInstance;
-  TheFrameworkTrackingInstance.StartTimer();
-
   app.Start();
   return a.exec();
 }

@@ -3,5 +3,6 @@
         <file>tomato.png</file>
         <file>aubergine.png</file>
         <file>pomo.png</file>
+        <file>melon.png</file>
     </qresource>
 </RCC>

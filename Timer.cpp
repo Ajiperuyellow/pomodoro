@@ -14,25 +14,22 @@ Timer::Timer(FrameworkTracking & f, QObject *parent) :
 void Timer::Tick()
 {
   seconds_counter++;
+
   if(seconds_counter==seconds_to_run)
   {
     framework.TimerHasRunOut();
   }
-  std::cout << "tick" << std::endl;  
+
+  framework.TimerTick(seconds_to_run - seconds_counter);
 }
 
 void Timer::Go(int seconds_to_run_arg)
 {  
-    //connect(&aQTimerObject,SIGNAL(timeout()),this,SLOT(Tick()));
     aQTimerObject.start(1000);
-    std::cout << "Go" << seconds_to_run << std::endl;
     seconds_to_run=seconds_to_run_arg;
 }
 
 void Timer::Stop()
 {
-    //connect(&aQTimerObject,SIGNAL(timeout()),this,SLOT(Tick()));
-    if( aQTimerObject.interval() == 1001){
-    aQTimerObject.stop();
-    std::cout << "Stop" << std::endl;}
+  aQTimerObject.stop();
 }

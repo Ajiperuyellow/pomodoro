@@ -30,7 +30,6 @@ private slots:
   void on_first_continue_button_clicked();
   void on_back_button_clicked();
   void on_activity_list_view_2_clicked(const QModelIndex &index);
-
   void on_todo_list_view_doubleClicked(const QModelIndex &index);
 
 private:

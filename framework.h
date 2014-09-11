@@ -3,6 +3,7 @@
 
 #include"Timer.h"
 
+
 class Framework
 {
 public:
@@ -10,16 +11,22 @@ public:
 
 };
 
+class TrackingWidget;
+
 class FrameworkTracking
 {
 public:
-    FrameworkTracking();
+    FrameworkTracking(TrackingWidget & widget);
 
     int StartTimer();
     int TimerHasRunOut();
     int Interrupt();
 
+public slots:
+    void TimerTick(int time_left);
+
 private:
+    TrackingWidget & gui_widget;
     Timer my_timer;
 };
 

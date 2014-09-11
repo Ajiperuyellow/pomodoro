@@ -28,6 +28,11 @@
      </item>
      <item>
       <widget class="QPushButton" name="start_pomodoro_button">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Start Pomodoro</string>
        </property>
