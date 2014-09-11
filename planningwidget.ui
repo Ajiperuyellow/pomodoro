@@ -14,7 +14,7 @@
    <string>StackedWidget</string>
   </property>
   <property name="currentIndex">
-   <number>0</number>
+   <number>1</number>
   </property>
   <widget class="QWidget" name="new_task_page">
    <property name="enabled">
@@ -37,6 +37,11 @@
         </item>
         <item>
          <widget class="QListView" name="activity_list_view">
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
           <property name="dragEnabled">
            <bool>false</bool>
           </property>
@@ -45,8 +50,8 @@
           </property>
           <property name="iconSize">
            <size>
-            <width>20</width>
-            <height>20</height>
+            <width>30</width>
+            <height>30</height>
            </size>
           </property>
          </widget>
@@ -97,7 +102,13 @@
            </widget>
           </item>
           <item>
-           <widget class="QListView" name="activity_list_view_2"/>
+           <widget class="QListView" name="activity_list_view_2">
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+             </font>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -114,7 +125,13 @@
            </widget>
           </item>
           <item>
-           <widget class="QListView" name="todo_list_view"/>
+           <widget class="QListView" name="todo_list_view">
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+             </font>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
