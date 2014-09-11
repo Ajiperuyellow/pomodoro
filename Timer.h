@@ -6,15 +6,19 @@
 
 class Timer : public QObject
 {
+
   Q_OBJECT
+
 public:
   explicit Timer(QObject *parent = 0);
 
 public slots:
   void Tick();
+  void Go();
+  void Stop();
 
 private:
-  QTimer t;
+  QTimer aQTimerObject;
 
 };
 
