@@ -10,7 +10,7 @@ PomodoroWidget::PomodoroWidget(PomodoroApplication & parent)
 {
   ui->setupUi(this);
   connect(ui->planning_button,SIGNAL(clicked()),&parent_app,SLOT(SwitchToPlanningWindow()));
-  //connect(ui->planning_button,SIGNAL(clicked()),this,SLOT(close()));
+  connect(ui->quit_button,SIGNAL(clicked()),&parent_app,SLOT(QuitApplication()));
 }
 
 PomodoroWidget::~PomodoroWidget()

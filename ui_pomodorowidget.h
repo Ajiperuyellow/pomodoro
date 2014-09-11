@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'pomodorowidget.ui'
 **
-** Created by: Qt User Interface Compiler version 5.2.1
+** Created by: Qt User Interface Compiler version 5.3.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
@@ -26,9 +25,9 @@ class Ui_PomodoroWidget
 public:
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
-
     QPushButton *planning_button;
     QPushButton *tracking_button;
+    QPushButton *quit_button;
 
     void setupUi(QWidget *PomodoroWidget)
     {
@@ -49,8 +48,14 @@ public:
 
         verticalLayout->addWidget(tracking_button);
 
+        quit_button = new QPushButton(PomodoroWidget);
+        quit_button->setObjectName(QStringLiteral("quit_button"));
+
+        verticalLayout->addWidget(quit_button);
+
 
         verticalLayout_2->addLayout(verticalLayout);
+
 
         retranslateUi(PomodoroWidget);
 
@@ -62,6 +67,7 @@ public:
         PomodoroWidget->setWindowTitle(QApplication::translate("PomodoroWidget", "Form", 0));
         planning_button->setText(QApplication::translate("PomodoroWidget", "Planning", 0));
         tracking_button->setText(QApplication::translate("PomodoroWidget", "Tracking", 0));
+        quit_button->setText(QApplication::translate("PomodoroWidget", "Quit", 0));
     } // retranslateUi
 
 };

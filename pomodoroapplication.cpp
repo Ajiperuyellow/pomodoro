@@ -38,3 +38,8 @@ void PomodoroApplication::SwitchToTrackingWindow()
   active_window->show();
 }
 
+void PomodoroApplication::QuitApplication()
+{
+  active_window->close();
+}
+
