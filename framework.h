@@ -1,6 +1,8 @@
 #ifndef FRAMEWORK_H
 #define FRAMEWORK_H
 
+#include"Timer.h"
+
 class Framework
 {
 public:
@@ -16,6 +18,9 @@ public:
     int StartTimer();
     int TimerHasRunOut();
     int Interrupt();
+
+private:
+    Timer my_timer;
 };
 
 class FrameworkPlanning

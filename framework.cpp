@@ -1,7 +1,6 @@
 #include "framework.h"
 #include<iostream>
 #include<stdexcept>
-#include "Timer.h"
 
 using std::cout;
 using std::endl;
@@ -14,6 +13,7 @@ FrameworkPlanning::FrameworkPlanning()
 {}
 
 FrameworkTracking::FrameworkTracking()
+  : my_timer(*this)
 {}
 
 
@@ -22,21 +22,15 @@ FrameworkTracking::FrameworkTracking()
 
 //FrameworkTracking Functions
 int FrameworkTracking::StartTimer(){
-
-Timer aTimerInstance(*this);
-aTimerInstance.Go(20);
-cout << "Start Timer" << endl;
-return 7;
-
+  my_timer.Go(20);
+  cout << "Start Timer" << endl;
+  return 7;
 }
 
 int FrameworkTracking::TimerHasRunOut(){
 
-cout << "Timer Has Run Out" << endl;
-
-//throw std::runtime_error("TimerHasRunOut - Function call");
-
-return 7;
+  cout << "Timer Has Run Out" << endl;
+  return 7;
 }
 
 

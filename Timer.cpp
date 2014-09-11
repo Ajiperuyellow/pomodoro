@@ -9,7 +9,6 @@ Timer::Timer(FrameworkTracking & f, QObject *parent) :
   framework(f)
 {
   connect(&aQTimerObject,SIGNAL(timeout()),this,SLOT(Tick()));
-  //aQTimerObject.start(1000);
 }
 
 void Timer::Tick()
