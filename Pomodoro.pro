@@ -16,7 +16,7 @@ SOURCES += main.cpp\
     pomodorowidget.cpp \
     planningwidget.cpp \
     trackingwidget.cpp \
-    tasklistmodel.cpp
+    tasklistmodel.cpp \
     database.cpp \
     Timer.cpp
 
@@ -26,7 +26,7 @@ HEADERS  += \
     pomodorowidget.h \
     planningwidget.h \
     trackingwidget.h \
-    tasklistmodel.h
+    tasklistmodel.h \
     database.h \
     Timer.h
 
@@ -43,3 +43,6 @@ LIBS += \
 
 doc.commands = doxygen
 QMAKE_EXTRA_TARGETS += doc
+
+OTHER_FILES += \
+    tomato.png

@@ -3,6 +3,8 @@
 
 #include <string>
 
+class sqlite3;
+
 class Database {
   sqlite3 *database;
   std::string db_name;
