@@ -1,9 +1,12 @@
 #include "Timer.h"
 #include <iostream>
+#include "framework.h"
 
-Timer::Timer(QObject *parent) :
+Timer::Timer(FrameworkTracking & f, QObject *parent) :
   QObject(parent),
-  aQTimerObject(this)
+  aQTimerObject(this),
+  seconds_counter(0),
+  framework(f)
 {
   connect(&aQTimerObject,SIGNAL(timeout()),this,SLOT(Tick()));
   //aQTimerObject.start(1000);
@@ -11,15 +14,22 @@ Timer::Timer(QObject *parent) :
 
 void Timer::Tick()
 {
-  std::cout << "tick" << std::endl;
+  seconds_counter++;
+  if(seconds_counter==seconds_to_run)
+  {
+    framework.TimerHasRunOut();
+  }
+  std::cout << "tick" << std::endl;  
 }
 
-void Timer::Go()
-{
+void Timer::Go(int seconds_to_run_arg)
+{  
     //connect(&aQTimerObject,SIGNAL(timeout()),this,SLOT(Tick()));
     aQTimerObject.start(1000);
-    std::cout << "Go" << std::endl;
+    std::cout << "Go" << seconds_to_run << std::endl;
+    seconds_to_run=seconds_to_run_arg;
 }
+
 void Timer::Stop()
 {
     //connect(&aQTimerObject,SIGNAL(timeout()),this,SLOT(Tick()));
