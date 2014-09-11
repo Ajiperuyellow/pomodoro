@@ -51,15 +51,75 @@ Database::~Database()
 
 bool Database::createTable()
 {
-   //char zSql[] = "CREATE TABLE activitytable(index PRIMARY KEY, activity TEXT, 
+   int rc;                //return code
+   sqlite3_stmt **ppStmt; //prepared statement
+  
+   char zSql[] = "CREATE TABLE activitytable("
+                       "id INT PRIMARY KEY,"    
+                       "activity TEXT,"
+                       "estimated_pomodoros INT,"
+                       "today INT,"
+                       "priority INT,"
+                       "finishedflag INT,"
+                       "usedpromodoros INT,"
+                       "externalinterrupt INT,"
+                       "internalinterrupt INT,"
+                       "unplannedurgent INT);";
+   cout << zSql << endl;  
 
-   return true;
+   rc = sqlite3_prepare(database,zSql,-1, ppStmt, NULL);
+
+   if ( rc != SQLITE_OK ) {
+      cout << "preparing statement in createTable() failed" << endl;
+      return false;
+   } 
+   rc = sqlite3_step(*ppStmt);
+   if ( rc == SQLITE_ERROR ) {
+      cout << "error in creating table" << endl;
+      return false;
+   }
+   if ( rc == SQLITE_DONE ) {
+      rc = sqlite3_finalize(*ppStmt);
+      if ( rc != SQLITE_OK ) {
+         cout << "Cannot destroy the preparing statement" << endl;
+         return false;
+      }
+      return true;
+   }else{
+      sqlite3_finalize(*ppStmt);
+      return false;
+   }
 };
 
 bool Database::insertActivityItem(std::string activity)
 {
+   int rc;                //return code
+   sqlite3_stmt **ppStmt; //prepared statement
+   std::string zSql = "INSERT INTO activitytable (activity) VALUES ('" + activity + "');"; 
+   cout << zSql << endl;
 
-   return true;
+   rc = sqlite3_prepare(database,zSql.c_str(),-1, ppStmt, NULL);
+
+   if ( rc != SQLITE_OK ) {
+      cout << "preparing statement in insertActivityItem() failed" << endl;
+      return false;
+   }
+   rc = sqlite3_step(*ppStmt);
+   if ( rc == SQLITE_ERROR ) {
+      cout << "error in insertActivityItem()" << endl;
+      return false;
+   }
+   if ( rc == SQLITE_DONE ) {
+      rc = sqlite3_finalize(*ppStmt);
+      if ( rc != SQLITE_OK ) {
+         cout << "Cannot destroy the preparing statement" << endl;
+         return false;
+      }
+      return true;
+   }else{
+      sqlite3_finalize(*ppStmt);
+      return false;
+   }
 };
 
 bool Database::updateEstimatedPromodoro(int activity_index, int numbers)
