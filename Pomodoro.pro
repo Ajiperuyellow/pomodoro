@@ -44,5 +44,7 @@ LIBS += \
 doc.commands = doxygen
 QMAKE_EXTRA_TARGETS += doc
 
-OTHER_FILES += \
-    tomato.png
+OTHER_FILES +=
+
+RESOURCES += \
+    icon_resources.qrc

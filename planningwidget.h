@@ -42,12 +42,13 @@ private:
   PomodoroApplication & parent_app;
 
   QIcon tomato_icon;
+  QIcon aubergine_icon;
 
   QList<QString> activity_list;
   QList<QString> todo_list;
 
-  TaskListModel inventory_list_model;
-  TaskListModel todo_list_model;
+  TaskListModelWithIcon inventory_list_model;
+  TaskListModelWithIcon todo_list_model;
 };
 
 #endif // PLANNINGWIDGET_H
