@@ -5,3 +5,4 @@ Pomodoro
 *.autosave
 *.o
 moc_*
+ui_*.h
