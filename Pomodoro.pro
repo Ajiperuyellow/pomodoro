@@ -16,7 +16,8 @@ SOURCES += main.cpp\
     pomodorowidget.cpp \
     planningwidget.cpp \
     trackingwidget.cpp \
-    database.cpp
+    database.cpp \
+    Timer.cpp
 
 HEADERS  += \
     framework.h \
@@ -24,7 +25,8 @@ HEADERS  += \
     pomodorowidget.h \
     planningwidget.h \
     trackingwidget.h \
-    database.h
+    database.h \
+    Timer.h
 
 FORMS    += \
     pomodorowidget.ui \
