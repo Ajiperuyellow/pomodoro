@@ -2,6 +2,7 @@
 #define POMODOROWIDGET_H
 
 #include <QWidget>
+#include <QPixmap>
 
 class PomodoroApplication;
 
@@ -20,6 +21,7 @@ public:
 private:
   Ui::PomodoroWidget *ui;
   PomodoroApplication & parent_app;
+  QPixmap tomato_icon;
 };
 
 #endif // POMODOROWIDGET_H

@@ -9,9 +9,10 @@ PlanningWidget::PlanningWidget(PomodoroApplication & parent)
   : QStackedWidget(0),
     ui(new Ui::PlanningWidget),
     parent_app(parent),
-    tomato_icon("tomato.png"),
-    inventory_list_model(activity_list,0),
-    todo_list_model(todo_list,0)
+    tomato_icon(":/tomato.png"),
+    aubergine_icon(":/aubergine.png"),
+    inventory_list_model(activity_list,aubergine_icon,0),
+    todo_list_model(todo_list,tomato_icon,0)
 {
   ui->setupUi(this);
 
