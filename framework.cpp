@@ -2,6 +2,8 @@
 #include<iostream>
 #include<stdexcept>
 
+#include"trackingwidget.h"
+
 using std::cout;
 using std::endl;
 
@@ -12,32 +14,35 @@ Framework::Framework()
 FrameworkPlanning::FrameworkPlanning()
 {}
 
-FrameworkTracking::FrameworkTracking()
-  : my_timer(*this)
+FrameworkTracking::FrameworkTracking(TrackingWidget & widget)
+  : gui_widget(widget),
+    my_timer(*this)
 {}
-
-
 
 //FUNCTIONS
 
 //FrameworkTracking Functions
 int FrameworkTracking::StartTimer(){
-  my_timer.Go(20);
-  cout << "Start Timer" << endl;
+  my_timer.Go(5);
+  gui_widget.ClockTick(5);
   return 7;
 }
 
-int FrameworkTracking::TimerHasRunOut(){
-
-  cout << "Timer Has Run Out" << endl;
+int FrameworkTracking::TimerHasRunOut()
+{
+  gui_widget.TimeUp();
+  my_timer.Stop();
   return 7;
 }
-
-
 
 int FrameworkTracking::Interrupt(){
 //throw std::runtime_error("Interrupt-Function call");
 return 7;
+}
+
+void FrameworkTracking::TimerTick(int seconds_left)
+{
+  gui_widget.ClockTick(seconds_left);
 }
 
 //FrameworkPlanning Functions
