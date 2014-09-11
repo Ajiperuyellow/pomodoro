@@ -3,7 +3,7 @@
 
 #include "pomodoroapplication.h"
 
-PomodoroWidget::PomodoroWidget(PomodoroApplication & parent)
+PomodoroWidget::PomodoroWidget(PomodoroApplication * parent)
   : QWidget(0),
     ui(new Ui::PomodoroWidget),
     parent_app(parent),
@@ -13,9 +13,9 @@ PomodoroWidget::PomodoroWidget(PomodoroApplication & parent)
 
   ui->image_label->setPixmap(pomodoro_pic.scaled(QSize(100,100),Qt::KeepAspectRatio));
 
-  connect(ui->planning_button,SIGNAL(clicked()),&parent_app,SLOT(SwitchToPlanningWindow()));
-  connect(ui->tracking_button,SIGNAL(clicked()),&parent_app,SLOT(SwitchToTrackingWindow()));
-  connect(ui->quit_button,SIGNAL(clicked()),&parent_app,SLOT(QuitApplication()));
+  connect(ui->planning_button,SIGNAL(clicked()),parent_app,SLOT(SwitchToPlanningWindow()));
+  connect(ui->tracking_button,SIGNAL(clicked()),parent_app,SLOT(SwitchToTrackingWindow()));
+  connect(ui->quit_button,SIGNAL(clicked()),parent_app,SLOT(QuitApplication()));
 }
 
 PomodoroWidget::~PomodoroWidget()

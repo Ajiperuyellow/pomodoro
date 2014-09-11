@@ -15,12 +15,12 @@ class PomodoroWidget : public QWidget
   Q_OBJECT
 
 public:
-  explicit PomodoroWidget(PomodoroApplication &parent);
+  explicit PomodoroWidget(PomodoroApplication * parent);
   ~PomodoroWidget();
 
 private:
   Ui::PomodoroWidget *ui;
-  PomodoroApplication & parent_app;
+  PomodoroApplication * parent_app;
   QPixmap pomodoro_pic;
 };
 

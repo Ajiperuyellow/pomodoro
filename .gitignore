@@ -7,3 +7,4 @@ Pomodoro
 moc_*
 ui_*.h
 *.db
+*Debug/*

@@ -3,7 +3,7 @@
 #include <QMessageBox>
 #include <QDateTime>
 
-TrackingWidget::TrackingWidget(PomodoroApplication & parent)
+TrackingWidget::TrackingWidget(PomodoroApplication * parent)
   : QWidget(0),
     ui(new Ui::TrackingWidget),
     parent_app(parent),

@@ -16,7 +16,7 @@ class TrackingWidget : public QWidget
   Q_OBJECT
 
 public:
-  explicit TrackingWidget(PomodoroApplication &parent);
+  explicit TrackingWidget(PomodoroApplication * parent);
   ~TrackingWidget();
 
 public slots:
@@ -28,7 +28,7 @@ private slots:
 
 private:
   Ui::TrackingWidget *ui;
-  PomodoroApplication & parent_app;
+  PomodoroApplication * parent_app;
   FrameworkTracking framework;
 
   PopUpPicture pop_up;

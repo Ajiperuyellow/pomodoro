@@ -15,12 +15,12 @@ public:
   TaskListModel(QList<QString> & tasks_ref, QObject * parent);
   virtual ~TaskListModel() {};
 
-  virtual int rowCount(const QModelIndex & parent = QModelIndex()) const
+  virtual int rowCount(const QModelIndex &) const
   {
     return task_list.size();
   }
 
-  virtual QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const;
+  virtual QVariant data(const QModelIndex &index, int role) const;
 
   void ListAppended();
 
