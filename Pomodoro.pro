@@ -16,14 +16,16 @@ SOURCES += main.cpp\
     pomodoroapplication.cpp \
     pomodorowidget.cpp \
     planningwidget.cpp \
-    trackingwidget.cpp
+    trackingwidget.cpp \
+    tasklistmodel.cpp
 
 HEADERS  += \
     framework.h \
     pomodoroapplication.h \
     pomodorowidget.h \
     planningwidget.h \
-    trackingwidget.h
+    trackingwidget.h \
+    tasklistmodel.h
 
 FORMS    += \
     pomodorowidget.ui \

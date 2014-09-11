@@ -1,5 +1,5 @@
 #include <QApplication>
-#include"pomodoroapplication.h"
+#include "pomodoroapplication.h"
 
 int main(int argc, char *argv[])
 {

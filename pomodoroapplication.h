@@ -20,6 +20,7 @@ public slots:
   void SwitchToMainMenu();
   void SwitchToPlanningWindow();
   void SwitchToTrackingWindow();
+  void QuitApplication();
 
 private:
   PomodoroWidget main_window;
