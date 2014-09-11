@@ -10,7 +10,6 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Pomodoro
 
-
 SOURCES += main.cpp\
     framework.cpp \
     pomodoroapplication.cpp \
@@ -18,6 +17,8 @@ SOURCES += main.cpp\
     planningwidget.cpp \
     trackingwidget.cpp \
     tasklistmodel.cpp
+    database.cpp \
+    Timer.cpp
 
 HEADERS  += \
     framework.h \
@@ -26,6 +27,8 @@ HEADERS  += \
     planningwidget.h \
     trackingwidget.h \
     tasklistmodel.h
+    database.h \
+    Timer.h
 
 FORMS    += \
     pomodorowidget.ui \
@@ -34,3 +37,9 @@ FORMS    += \
 
 QMAKE_CXXFLAGS += \
     -std=c++11
+
+LIBS += \
+    -lsqlite3
+
+doc.commands = doxygen
+QMAKE_EXTRA_TARGETS += doc

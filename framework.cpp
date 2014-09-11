@@ -1,9 +1,7 @@
 #include "framework.h"
 #include<iostream>
 #include<stdexcept>
-#include <cppunit/extensions/HelperMacros.h>
-
-
+#include "Timer.h"
 
 using std::cout;
 using std::endl;
@@ -22,7 +20,12 @@ FrameworkTracking::FrameworkTracking()
 
 //FrameworkTracking Functions
 int FrameworkTracking::StartTimer(){
+
+    Timer aTimerInstance;
+    aTimerInstance.Go();
+
 //throw std::runtime_error("startTimer - Function call");
+
 return 7;
 }
 
