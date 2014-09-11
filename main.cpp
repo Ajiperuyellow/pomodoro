@@ -20,12 +20,8 @@ int main(int argc, char *argv[])
   QApplication a(argc,argv);
   PomodoroApplication app;
 
-  Timer T;
-  T.Go();
-  T.Stop();
-
-  //FrameworkTracking TheFrameworkTrackingInstance;
-  //TheFrameworkTrackingInstance.StartTimer();
+  FrameworkTracking TheFrameworkTrackingInstance;
+  TheFrameworkTrackingInstance.StartTimer();
 
   app.Start();
   return a.exec();
