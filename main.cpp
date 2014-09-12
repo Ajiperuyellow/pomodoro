@@ -2,12 +2,10 @@
 #include"pomodoroapplication.h"
 
 #include <sqlite3.h>
-#include "framework.h"
 #include<iostream>
 #include<stdexcept>
-#include "Timer.h"
-
-#include <sstream>
+#include "framework.h"
+#include "database.h"
 
 using std::cout;
 using std::endl;
@@ -18,15 +16,14 @@ int main(int argc, char *argv[])
   cout << "Start Pomodoro" << endl;
 
   QApplication a(argc,argv);
+
   PomodoroApplication app;
+  Database task_database;
 
-  Database TheDatabaseInstance;
-  TheDatabaseInstance.openDatabase();
-  //TheDatabaseInstance.createTable();
+  FrameworkPlanning planning_instance(&task_database,app.GetPlanningWidget());
+  FrameworkTracking tracking_instance(&task_database,app.GetTrackingWidget());
 
-  FrameworkPlanning aPlanningInstance(TheDatabaseInstance);
-  FrameworkPlanning aTrackingInstance(TheDatabaseInstance);
-
+  /*
   aPlanningInstance.NewNameOfProject();
 
   FrameworkPlanning::task newtask;
@@ -34,14 +31,17 @@ int main(int argc, char *argv[])
   aPlanningInstance.EnterListItem(newtask);
 
   FrameworkTracking::interrupt newinterrupt;
+  */
 
+  Framework framework;
+  framework.ProvideDatabase(&task_database);
+  framework.ProvideGUI(&app);
+  framework.ProvidePlanner(&planning_instance);
+  framework.ProvideTracker(&tracking_instance);
 
-  /*
-  FrameworkPlanning::EnterListItem();*/
+  framework.LinkGUI();
 
+  framework.StartGUI();
 
-
-
-  app.Start();
   return a.exec();
 }

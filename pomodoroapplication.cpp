@@ -5,10 +5,9 @@
 #include <iostream>
 
 PomodoroApplication::PomodoroApplication()
-  : task_database(),
-    main_window(this),
-    planning_window(this,&task_database),
-    tracking_window(this,&task_database),
+  : main_window(this),
+    planning_window(this),
+    tracking_window(this),
     active_window(&main_window)
 {
 }

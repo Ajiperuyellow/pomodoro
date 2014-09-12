@@ -3,11 +3,12 @@
 
 #include <QObject>
 
-#include "database.h"
-
 #include "pomodorowidget.h"
 #include "planningwidget.h"
 #include "trackingwidget.h"
+
+class FrameworkTracking;
+class FrameworkPlanning;
 
 class PomodoroApplication : public QObject
 {
@@ -18,6 +19,21 @@ public:
   PomodoroApplication();
   void Start();
 
+  PlanningWidget * GetPlanningWidget()
+  {
+    return &planning_window;
+  }
+  TrackingWidget * GetTrackingWidget()
+  {
+    return &tracking_window;
+  }
+
+  void ProvideTrackingFramework(FrameworkTracking * fr)
+  {
+    tracking_window.ProvideFramework(fr);
+  };
+  void ProvidePlanningFramework(FrameworkPlanning * fr) {};
+
 public slots:
   void SwitchToMainMenu();
   void SwitchToPlanningWindow();
@@ -25,8 +41,6 @@ public slots:
   void QuitApplication();
 
 private:
-  Database task_database;
-
   PomodoroWidget main_window;
   PlanningWidget planning_window;
   TrackingWidget tracking_window;

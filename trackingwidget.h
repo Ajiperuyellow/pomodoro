@@ -2,10 +2,9 @@
 #define TRACKINGWIDGET_H
 
 #include <QWidget>
-#include "framework.h"
 
 class PomodoroApplication;
-class Database;
+class FrameworkTracking;
 
 namespace Ui {
 class TrackingWidget;
@@ -16,8 +15,13 @@ class TrackingWidget : public QWidget
   Q_OBJECT
 
 public:
-  explicit TrackingWidget(PomodoroApplication * parent, Database * d);
+  explicit TrackingWidget(PomodoroApplication * parent, FrameworkTracking * manager = nullptr);
   ~TrackingWidget();
+
+  void ProvideFramework(FrameworkTracking * fr)
+  {
+    framework = fr;
+  }
 
 public slots:
   void TimeUp();
@@ -29,9 +33,8 @@ private slots:
 private:
   Ui::TrackingWidget *ui;
   PomodoroApplication * parent_app;
-  Database * task_database;
 
-  FrameworkTracking framework;
+  FrameworkTracking * framework;
 };
 
 #endif // TRACKINGWIDGET_H

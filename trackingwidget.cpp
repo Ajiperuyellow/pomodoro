@@ -1,16 +1,17 @@
 #include "trackingwidget.h"
 #include "ui_trackingwidget.h"
+
 #include <QMessageBox>
 #include <QDateTime>
 
-#include "database.h"
+#include "framework.h"
 
-TrackingWidget::TrackingWidget(PomodoroApplication * parent, Database * d)
+
+TrackingWidget::TrackingWidget(PomodoroApplication * parent, FrameworkTracking * owner)
   : QWidget(0),
     ui(new Ui::TrackingWidget),
     parent_app(parent),
-    task_database(d),
-    framework(*this,*task_database)
+    framework(owner)
 {
   ui->setupUi(this);
 }
@@ -43,5 +44,8 @@ void TrackingWidget::ClockTick(int display_seconds)
 
 void TrackingWidget::on_start_pomodoro_button_clicked()
 {
-   framework.StartTimer();
+  if(framework == nullptr)
+    throw std::runtime_error("No framework provided");
+
+ framework->StartTimer();
 }

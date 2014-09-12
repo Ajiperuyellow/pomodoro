@@ -10,7 +10,6 @@
 
 
 class PomodoroApplication;
-class Database;
 
 namespace Ui {
 class PlanningWidget;
@@ -24,7 +23,7 @@ class PlanningWidget : public QStackedWidget
   Q_OBJECT
 
 public:
-  explicit PlanningWidget(PomodoroApplication * parent, Database * d);
+  explicit PlanningWidget(PomodoroApplication * parent);
   ~PlanningWidget();
 
 public slots:
@@ -43,7 +42,6 @@ private:
 private:
   Ui::PlanningWidget *ui;
   PomodoroApplication * parent_app;
-  Database * task_database;
 
   QIcon tomato_icon;
   QIcon aubergine_icon;
