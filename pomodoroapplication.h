@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+#include "database.h"
+
 #include "pomodorowidget.h"
 #include "planningwidget.h"
 #include "trackingwidget.h"
@@ -23,6 +25,8 @@ public slots:
   void QuitApplication();
 
 private:
+  Database task_database;
+
   PomodoroWidget main_window;
   PlanningWidget planning_window;
   TrackingWidget tracking_window;

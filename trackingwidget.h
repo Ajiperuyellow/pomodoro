@@ -3,9 +3,9 @@
 
 #include <QWidget>
 #include "framework.h"
-#include "popuppicture.h"
 
 class PomodoroApplication;
+class Database;
 
 namespace Ui {
 class TrackingWidget;
@@ -16,7 +16,7 @@ class TrackingWidget : public QWidget
   Q_OBJECT
 
 public:
-  explicit TrackingWidget(PomodoroApplication * parent);
+  explicit TrackingWidget(PomodoroApplication * parent, Database * d);
   ~TrackingWidget();
 
 public slots:
@@ -29,9 +29,9 @@ private slots:
 private:
   Ui::TrackingWidget *ui;
   PomodoroApplication * parent_app;
-  FrameworkTracking framework;
+  Database * task_database;
 
-  PopUpPicture pop_up;
+  FrameworkTracking framework;
 };
 
 #endif // TRACKINGWIDGET_H
