@@ -10,7 +10,7 @@
 using std::cout;
 using std::endl;
 
-
+/**@brief The Main Routine */
 int main(int argc, char *argv[])
 {
   cout << "Start Pomodoro" << endl;
@@ -23,15 +23,17 @@ int main(int argc, char *argv[])
   FrameworkPlanning planning_instance(&task_database,app.GetPlanningWidget());
   FrameworkTracking tracking_instance(&task_database,app.GetTrackingWidget());
 
-  /*
-  aPlanningInstance.NewNameOfProject();
+
+  planning_instance.NewNameOfProject();
 
   FrameworkPlanning::task newtask;
   newtask.taskstring = "Ich steh mit beiden Beinen aufm Schlauch.";
-  aPlanningInstance.EnterListItem(newtask);
+  newtask.number_of_pomodori = 3;
+  planning_instance.EnterListItem(newtask);
+  planning_instance.SetNumberOfPomodori(newtask.number_of_pomodori);
+  //FrameworkTracking::interrupt newinterrupt;
 
-  FrameworkTracking::interrupt newinterrupt;
-  */
+
 
   Framework framework;
   framework.ProvideDatabase(&task_database);
