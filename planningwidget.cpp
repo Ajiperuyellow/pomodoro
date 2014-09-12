@@ -5,7 +5,7 @@
 #include <QMessageBox>
 #include <iostream>
 
-PlanningWidget::PlanningWidget(PomodoroApplication & parent)
+PlanningWidget::PlanningWidget(PomodoroApplication * parent)
   : QStackedWidget(0),
     ui(new Ui::PlanningWidget),
     parent_app(parent),
@@ -22,8 +22,8 @@ PlanningWidget::PlanningWidget(PomodoroApplication & parent)
 
   connect(ui->add_item_button,SIGNAL(clicked()),this,SLOT(SubmitTask()));
   connect(ui->new_item_edit,SIGNAL(returnPressed()),ui->add_item_button,SIGNAL(clicked()));
-  connect(ui->quit_button,SIGNAL(clicked()),&parent_app,SLOT(SwitchToMainMenu()));
-  connect(ui->continue_button,SIGNAL(clicked()),&parent_app,SLOT(SwitchToTrackingWindow()));
+  connect(ui->quit_button,SIGNAL(clicked()),parent_app,SLOT(SwitchToMainMenu()));
+  connect(ui->continue_button,SIGNAL(clicked()),parent_app,SLOT(SwitchToTrackingWindow()));
 }
 
 PlanningWidget::~PlanningWidget()

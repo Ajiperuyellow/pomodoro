@@ -5,9 +5,9 @@
 #include <iostream>
 
 PomodoroApplication::PomodoroApplication()
-  : main_window(*this),
-    planning_window(*this),
-    tracking_window(*this),
+  : main_window(this),
+    planning_window(this),
+    tracking_window(this),
     active_window(&main_window)
 {
 }

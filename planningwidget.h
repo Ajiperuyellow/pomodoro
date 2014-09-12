@@ -17,16 +17,19 @@ class PlanningWidget;
 
 class PlanningWidget : public QStackedWidget
 {
+
+  friend class TestPlanningWidget;
+
   Q_OBJECT
 
 public:
-  explicit PlanningWidget(PomodoroApplication &parent);
+  explicit PlanningWidget(PomodoroApplication * parent);
   ~PlanningWidget();
 
 public slots:
   void SubmitTask();
 
-private slots:
+public slots:
   void on_first_continue_button_clicked();
   void on_back_button_clicked();
   void on_activity_list_view_2_clicked(const QModelIndex &index);
@@ -38,7 +41,7 @@ private:
 
 private:
   Ui::PlanningWidget *ui;
-  PomodoroApplication & parent_app;
+  PomodoroApplication * parent_app;
 
   QIcon tomato_icon;
   QIcon aubergine_icon;

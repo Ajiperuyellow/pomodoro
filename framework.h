@@ -61,6 +61,4 @@ private:
 };
 
 
-
-
 #endif // FRAMEWORK_H

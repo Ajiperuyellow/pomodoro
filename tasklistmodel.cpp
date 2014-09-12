@@ -27,7 +27,7 @@ TaskListModelWithIcon::TaskListModelWithIcon(QList<QString> &tasks_ref, const QI
 {
 }
 
-QVariant TaskListModelWithIcon::data(const QModelIndex &index, int role) const
+QVariant TaskListModelWithIcon::data(const QModelIndex & index, int role) const
 {
   if(role == Qt::DecorationRole){
       return icon;

@@ -7,6 +7,8 @@
 #include<stdexcept>
 #include "Timer.h"
 
+#include <sstream>
+
 using std::cout;
 using std::endl;
 

@@ -18,8 +18,7 @@ SOURCES += main.cpp\
     trackingwidget.cpp \
     tasklistmodel.cpp \
     database.cpp \
-    Timer.cpp \
-    popuppicture.cpp
+    Timer.cpp
 
 HEADERS  += \
     framework.h \
@@ -29,14 +28,12 @@ HEADERS  += \
     trackingwidget.h \
     tasklistmodel.h \
     database.h \
-    Timer.h \
-    popuppicture.h
+    Timer.h
 
 FORMS    += \
     pomodorowidget.ui \
     planningwidget.ui \
-    trackingwidget.ui \
-    popuppicture.ui
+    trackingwidget.ui
 
 QMAKE_CXXFLAGS += \
     -std=c++11
