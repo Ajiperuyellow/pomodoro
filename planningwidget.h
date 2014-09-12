@@ -17,6 +17,9 @@ class PlanningWidget;
 
 class PlanningWidget : public QStackedWidget
 {
+
+  friend class TestPlanningWidget;
+
   Q_OBJECT
 
 public:

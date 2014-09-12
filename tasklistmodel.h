@@ -15,6 +15,13 @@ public:
   TaskListModel(QList<QString> & tasks_ref, QObject * parent);
   virtual ~TaskListModel() {};
 
+  QModelIndex getItemIndex(int row)
+  {
+    if(row < task_list.size())
+            return createIndex(row,0);
+    return QModelIndex();
+  }
+
   virtual int rowCount(const QModelIndex &) const
   {
     return task_list.size();
