@@ -2,7 +2,7 @@
 #include<iostream>
 #include<stdexcept>
 
-#include"trackingwidget.h"
+#include "pomodoroapplication.h"
 
 using std::cout;
 using std::endl;
@@ -10,6 +10,16 @@ using std::endl;
 //CONSTRUCTORS
 Framework::Framework()
 {}
+
+void Framework::SetGUI(PomodoroApplication *gui)
+{
+  gui_app = gui;
+}
+
+void Framework::StartGUI()
+{
+  gui_app->Start();
+}
 
 FrameworkPlanning::FrameworkPlanning()
 {}
