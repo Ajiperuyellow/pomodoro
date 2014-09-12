@@ -5,6 +5,7 @@
 #include <QTimer>
 
 class FrameworkTracking;
+class FrameworkPlanning;
 
 class Timer : public QObject
 {
@@ -12,7 +13,7 @@ class Timer : public QObject
   Q_OBJECT
 
 public:
-  explicit Timer(FrameworkTracking & f, QObject *parent = 0);
+  explicit Timer(FrameworkTracking & FrTr, QObject *parent = 0);
  
   void Go(int seconds_to_run_arg);
   void Stop();
@@ -23,7 +24,7 @@ public slots:
 private:
   QTimer aQTimerObject;
   int seconds_counter;
-  FrameworkTracking & framework;
+  FrameworkTracking & FrameworkTrackingInstance;
   int seconds_to_run;
 };
 

@@ -67,7 +67,7 @@ bool Database::createTable()
                        "unplannedurgent INT);";
    cout << zSql << endl;  
 
-   rc = sqlite3_prepare(database,zSql,-1, ppStmt, NULL);
+   rc = sqlite3_prepare_v2(database,zSql,-1, ppStmt, NULL);
 
    if ( rc != SQLITE_OK ) {
       cout << "preparing statement in createTable() failed" << endl;
@@ -98,7 +98,7 @@ bool Database::insertActivityItem(std::string activity)
    std::string zSql = "INSERT INTO activitytable (activity) VALUES ('" + activity + "');"; 
    cout << zSql << endl;
 
-   rc = sqlite3_prepare(database,zSql.c_str(),-1, ppStmt, NULL);
+   rc = sqlite3_prepare_v2(database,zSql.c_str(),-1, ppStmt, NULL);
 
    if ( rc != SQLITE_OK ) {
       cout << "preparing statement in insertActivityItem() failed" << endl;
