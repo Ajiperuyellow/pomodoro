@@ -3,11 +3,14 @@
 #include <QMessageBox>
 #include <QDateTime>
 
-TrackingWidget::TrackingWidget(PomodoroApplication * parent)
+#include "database.h"
+
+TrackingWidget::TrackingWidget(PomodoroApplication * parent, Database * d)
   : QWidget(0),
     ui(new Ui::TrackingWidget),
     parent_app(parent),
-    framework(*this)
+    task_database(d),
+    framework(*this,*task_database)
 {
   ui->setupUi(this);
 }
@@ -20,7 +23,6 @@ TrackingWidget::~TrackingWidget()
 void TrackingWidget::TimeUp()
 {
   QMessageBox::information(this,"Time up","Pomodoro out, time for a break");
-  pop_up.show();
 }
 
 void TrackingWidget::ClockTick(int display_seconds)

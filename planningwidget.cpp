@@ -5,10 +5,13 @@
 #include <QMessageBox>
 #include <iostream>
 
-PlanningWidget::PlanningWidget(PomodoroApplication * parent)
+#include "database.h"
+
+PlanningWidget::PlanningWidget(PomodoroApplication * parent, Database * d)
   : QStackedWidget(0),
     ui(new Ui::PlanningWidget),
     parent_app(parent),
+    task_database(d),
     tomato_icon(":/tomato.png"),
     aubergine_icon(":/aubergine.png"),
     inventory_list_model(activity_list,aubergine_icon,0),
