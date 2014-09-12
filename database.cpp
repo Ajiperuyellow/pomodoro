@@ -7,7 +7,7 @@ using namespace std;
 
 Database::Database()
 {
-   db_name = "promodoro.db";
+   db_name = "pomodoro.db";
 };
 
 bool Database::openDatabase()
@@ -55,15 +55,15 @@ bool Database::createTable()
    sqlite3_stmt **ppStmt; //prepared statement
   
    char zSql[] = "CREATE TABLE activitytable("
-                       "id INT PRIMARY KEY,"    
-                       "activity TEXT,"
+                      // "id INT PRIMARY KEY,"    
+                       "activity TEXT PRIMARY KEY,"
                        "estimated_pomodoros INT,"
-                       "today INT,"
+                       "todotodayflag INT,"
                        "priority INT,"
                        "finishedflag INT,"
                        "usedpromodoros INT,"
-                       "externalinterrupt INT,"
                        "internalinterrupt INT,"
+                       "externalinterrupt INT,"
                        "unplannedurgent INT);";
    cout << zSql << endl;  
 
@@ -97,6 +97,9 @@ bool Database::insertActivityItem(std::string activity)
    sqlite3_stmt **ppStmt; //prepared statement
    std::string zSql = "INSERT INTO activitytable (activity) VALUES ('" + activity + "');"; 
    cout << zSql << endl;
+
+   //rc = insertSqlCmd(zSql);
+   //return rc;
 
    rc = sqlite3_prepare(database,zSql.c_str(),-1, ppStmt, NULL);
 
@@ -162,4 +165,58 @@ bool Database::insertUnplannedUrgentActivity(int activity_index)
 {
 
    return true;
+};
+
+bool getActivityInventory()
+{
+   int rc;
+   std::string zSql = "SELECT activity,estimated_pomodoros FROM activitytable;";
+   sqlite3_stmt **ppStmt;
+   std::string activity;
+   int pomodoros;   
+
+   rc = sqlite3_prepare(database,zSql.c_str(),-1, ppStmt, NULL);
+   rc = sqlite3_step(*ppStmt);
+   if ( rc == SQLITE_ROW ) {
+      activity = sqlite3(*ppStmt, 0);
+      pomodoros = sqlite3(*ppStmr, 1);
+   }
+   sqlite3_finalize(*ppStmt);  
+
+   return true;
+};
+
+int Database::insertSqlCmd(std::string zSql)
+{
+   int rc;
+   sqlite3_stmt **ppStmt; //prepared statement
+   std::string cmdSql = zSql;
+
+   cout << zSql << endl;
+
+   rc = sqlite3_prepare(database,cmdSql.c_str(),-1, ppStmt, NULL);
+
+   cout << "perpare done" << endl;
+
+   if ( rc != SQLITE_OK ) {
+      cout << "preparing statement in insertActivityItem() failed" << endl;
+      return false;
+   }
+   rc = sqlite3_step(*ppStmt);
+   if ( rc == SQLITE_ERROR ) {
+      cout << "error in insertActivityItem()" << endl;
+      return false;
+   }
+   cout << "step done" << endl;
+   if ( rc == SQLITE_DONE ) {
+      rc = sqlite3_finalize(*ppStmt);
+      if ( rc != SQLITE_OK ) {
+         cout << "Cannot destroy the preparing statement" << endl;
+         return false;
+      }
+      return true;
+   }else{
+      sqlite3_finalize(*ppStmt);
+      return false;
+   } 
 };
